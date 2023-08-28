@@ -18,8 +18,8 @@ In this file, directory paths are written with a forward slash as on MacOS, Linu
 ## Basics
 
 1. When using Git locally, what are these?  Define each one in a sentence
-   * Staging area - tha area where the tracked (added) files stay.
-   * Working copy - the area where the untracked files stay.
+   * Staging area - the area where the tracked (added) files stay.
+   * Working copy - It is the area where you are currently working. It is where the untracked files live.
    * master - It is a default branch that come with the first commit made on the project.
    * HEAD - It is a pointer that points to the current branch reference.
 
@@ -35,6 +35,9 @@ In this file, directory paths are written with a forward slash as on MacOS, Linu
 
 3. There are 2 ways to create a local Git repository.  Briefly descibe each one:
    - use a project directory that is not under version control, then turn it into git repository.
+     ```
+     git init <project directory>
+     ```
    - cloning an existing git repository from elsewhere.
 
 
@@ -67,7 +70,7 @@ test/
 
 3. List the names of files in the staging area.
    ```
-   git diff --staged  
+   git diff --name-only --cached
    ```
 
 4. Remove `README.md` from the staging area. This is **very useful** if you accidentally add something you don't want to commit.
@@ -89,7 +92,7 @@ test/
 
 7. Command to move all the .py files from the `src` dir to the top-level directory of this repository. This command moves them in your working copy *and* in the git repo (when you commit the change):
    ```
-    git mv src/* out/
+    git mv src/*.py .
    ```
 
 
